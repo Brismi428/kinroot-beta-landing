@@ -8,24 +8,11 @@ import Footer from '@/components/Footer';
 export default function SuccessPage() {
   const [copied, setCopied] = useState(false);
   const shareUrl = 'https://kinroot.io';
-  const shareMessage = "I just applied for early access to Kinroot — it's a new app for busy families to manage the mental load. You should check it out: https://kinroot.io";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(shareUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
-
-  const shareViaSMS = () => {
-    window.open(`sms:?body=${encodeURIComponent(shareMessage)}`, '_blank');
-  };
-
-  const shareViaEmail = () => {
-    window.open(`mailto:?subject=${encodeURIComponent('Check out Kinroot')}&body=${encodeURIComponent(shareMessage)}`, '_blank');
-  };
-
-  const shareViaFacebook = () => {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
   };
 
   return (
@@ -76,49 +63,16 @@ export default function SuccessPage() {
               Know another busy South Shore family? Invite them to apply. If you both get in, you&apos;ll have someone to coordinate with from day one.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex justify-center">
               <button
                 onClick={copyToClipboard}
-                className="flex items-center gap-2 bg-secondary text-secondary-foreground font-heading font-semibold px-6 py-3 hover:opacity-90 transition-opacity"
+                className="flex items-center gap-2 bg-primary text-primary-foreground font-heading font-semibold px-6 py-3 hover:opacity-90 transition-opacity"
                 style={{ borderRadius: 'var(--radius)' }}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
                 {copied ? 'Copied!' : 'Copy Link'}
-              </button>
-
-              <button
-                onClick={shareViaSMS}
-                className="flex items-center gap-2 bg-primary text-primary-foreground font-heading font-semibold px-6 py-3 hover:opacity-90 transition-opacity"
-                style={{ borderRadius: 'var(--radius)' }}
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                </svg>
-                Text Message
-              </button>
-
-              <button
-                onClick={shareViaEmail}
-                className="flex items-center gap-2 bg-primary text-primary-foreground font-heading font-semibold px-6 py-3 hover:opacity-90 transition-opacity"
-                style={{ borderRadius: 'var(--radius)' }}
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                Email
-              </button>
-
-              <button
-                onClick={shareViaFacebook}
-                className="flex items-center gap-2 bg-primary text-primary-foreground font-heading font-semibold px-6 py-3 hover:opacity-90 transition-opacity"
-                style={{ borderRadius: 'var(--radius)' }}
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-                Facebook
               </button>
             </div>
           </div>
