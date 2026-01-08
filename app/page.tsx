@@ -4,7 +4,7 @@ import PainPoints from '@/components/PainPoints';
 import Benefits from '@/components/Benefits';
 import Location from '@/components/Location';
 import Testimonial from '@/components/Testimonial';
-import ApplicationForm from '@/components/ApplicationForm';
+import BetaClosed from '@/components/BetaClosed';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
         <Benefits />
         <Location />
         <Testimonial />
-        <ApplicationForm />
+        <BetaClosed />
       </main>
       <Footer />
     </div>

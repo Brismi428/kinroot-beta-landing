@@ -1,8 +1,8 @@
 'use client';
 
 export default function Hero() {
-  const scrollToForm = () => {
-    document.getElementById('application-form')?.scrollIntoView({
+  const scrollToWaitlist = () => {
+    document.getElementById('beta-closed')?.scrollIntoView({
       behavior: 'smooth'
     });
   };
@@ -13,20 +13,18 @@ export default function Hero() {
         Finally, get it out of your head.
       </h2>
       <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-        Kinroot is the operating system for busy families — a shared place for schedules, meals, and household coordination. We&apos;re looking for parents in{' '}
-        <span className="font-semibold text-accent">Weymouth</span>,{' '}
-        <span className="font-semibold text-accent">Hingham</span>,{' '}
-        <span className="font-semibold text-accent">Quincy</span> areas of the South Shore, Massachusetts to try it first.
+        Kinroot is the operating system for busy families — a shared place for schedules, meals, and household coordination. We&apos;re currently building with beta families on the South Shore, and expanding to{' '}
+        <span className="font-semibold text-accent">Boston</span> soon.
       </p>
       <button
-        onClick={scrollToForm}
+        onClick={scrollToWaitlist}
         className="bg-primary text-primary-foreground font-heading font-semibold px-8 py-4 text-lg hover:opacity-90 transition-opacity"
         style={{ borderRadius: 'var(--radius)' }}
       >
-        Apply for Early Access
+        Join the Waitlist
       </button>
       <p className="text-sm text-muted-foreground mt-3">
-        Short form. No commitment. Feedback welcome.
+        Beta is full — join the waitlist for future access.
       </p>
       <p className="text-xs text-muted-foreground mt-4 max-w-md mx-auto">
         Kinroot is not another to-do app or shared calendar — it&apos;s designed to reduce the mental load, not organize it better.
