@@ -17,8 +17,9 @@ export default function Hero() {
         <span className="font-semibold text-accent">Boston</span> soon.
       </p>
       <button
+        type="button"
         onClick={scrollToWaitlist}
-        className="bg-primary text-primary-foreground font-heading font-semibold px-8 py-4 text-lg hover:opacity-90 transition-opacity"
+        className="bg-primary text-primary-foreground font-heading font-semibold px-8 py-4 text-lg hover:opacity-90 active:opacity-80 transition-opacity cursor-pointer"
         style={{ borderRadius: 'var(--radius)' }}
       >
         Join the Waitlist

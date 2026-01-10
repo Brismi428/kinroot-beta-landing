@@ -78,6 +78,7 @@ export default function BetaClosed() {
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
+                name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -88,7 +89,7 @@ export default function BetaClosed() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-primary text-primary-foreground font-heading font-semibold px-6 py-3 hover:opacity-90 transition-opacity disabled:opacity-50 whitespace-nowrap"
+                className="bg-primary text-primary-foreground font-heading font-semibold px-6 py-3 hover:opacity-90 active:opacity-80 transition-opacity disabled:opacity-50 whitespace-nowrap cursor-pointer"
                 style={{ borderRadius: 'var(--radius)' }}
               >
                 {isSubmitting ? 'Joining...' : 'Join Waitlist'}
